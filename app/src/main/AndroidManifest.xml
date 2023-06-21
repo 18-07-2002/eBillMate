@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="30" />
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/free_sample_by_wix"
+        android:label="eBillMate"
+        android:supportsRtl="true"
+        android:requestLegacyExternalStorage="true"
+        android:preserveLegacyExternalStorage="true"
+        android:roundIcon="@drawable/free_sample_by_wix"
+        android:theme="@style/AppTheme"
+        tools:targetApi="r"><!--for when requestLegacyExternalStorage will be removed-->>
+
+
+
+
+        <activity
+            android:name="com.Swayam.gstbill.gstbill.BillsActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.Swayam.gstbill.gstbill.SetupPasswordActivity"
+            android:label="@string/setup_password_activity_title" />
+
+        <provider
+            android:name="com.Swayam.gstbill.gstbill.data.GSTBillingContentProvider"
+            android:authorities="com.Swayam.gstbill.gstbill"
+            android:exported="false" />
+
+        <activity
+            android:name="com.Swayam.gstbill.gstbill.NewBillActivity"
+            android:label="@string/new_bill_activity_title" />
+        <activity
+            android:name="com.Swayam.gstbill.gstbill.NewBillCustomerActivity"
+            android:label="@string/new_bill_customer_activity_title" />
+        <activity android:name="com.Swayam.gstbill.gstbill.DetailActivity" />
+        <activity android:name="com.Swayam.gstbill.gstbill.SavePDFActivity"></activity>
+    </application>
+
+</manifest>
